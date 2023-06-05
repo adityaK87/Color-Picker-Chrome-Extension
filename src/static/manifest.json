@@ -11,5 +11,13 @@
     "action": {
         "default_title": "chrome-extension",
         "default_popup": "popup.html"
-    }
+    },
+    "permissions": [
+        "bookmarks",
+        "tabs"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "options_page": "options.html"
 }
