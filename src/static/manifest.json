@@ -12,9 +12,14 @@
         "default_title": "chrome-extension",
         "default_popup": "popup.html"
     },
+    "chrome_url_overrides": {
+        "newtab": "newTab.html"
+    },
     "permissions": [
         "bookmarks",
-        "tabs"
+        "tabs",
+        "storage",
+        "identity"
     ],
     "background": {
         "service_worker": "background.js"
