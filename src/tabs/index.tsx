@@ -1,5 +1,6 @@
 import React from "react";
 import Tabs from "./tabs";
+import { HashRouter as Router } from "react-router-dom";
 
 import { createRoot } from "react-dom/client";
 
@@ -10,7 +11,11 @@ function init() {
 		throw new Error(" can not find AppContainer");
 	}
 	const root = createRoot(appContainer);
-	root.render(<Tabs />);
+	root.render(
+		<Router>
+			<Tabs />
+		</Router>
+	);
 }
 
 init();
