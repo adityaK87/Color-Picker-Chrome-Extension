@@ -2,15 +2,36 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import "../assets/tailwind.css";
 
+const handleInput = (e) => {
+	e.preventDefault();
+	const name = e.target[0].value;
+	chrome.storage.sync.set({ name }, () => {
+		console.log(`Name is set to ${name}`);
+	});
+};
+
 const popup = (
-	<div>
-		<h1 className='text-5xl text-green-500'> Radhe Radhe</h1>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-			cupiditate fugiat voluptatum aperiam possimus adipisci praesentium
-			incidunt eum quaerat fuga sed quia impedit recusandae assumenda
-			pariatur debitis est, explicabo veniam.
-		</p>
+	<div className='h-screen'>
+		<form
+			className=' flex justify-center item-center  py-44'
+			onSubmit={handleInput}>
+			<div className='mb-4'>
+				<input
+					className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
+					id='username'
+					type='text'
+					placeholder='Username'
+				/>
+			</div>
+
+			<div className='flex items-center justify-between'>
+				<button
+					className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+					type='button'>
+					Submit
+				</button>
+			</div>
+		</form>
 	</div>
 );
 
