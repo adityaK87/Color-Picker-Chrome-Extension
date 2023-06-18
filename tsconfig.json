@@ -1,5 +1,6 @@
 { 
     "compilerOptions": {
+        "types":["jest", "mocha", "chrome", "node"],
         "jsx":"react",
         "module": "es6",
         "target": "es6",
