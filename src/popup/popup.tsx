@@ -33,7 +33,7 @@ const Popup = () => {
 				console.log(e);
 				// Ensures component is still mounted
 				// before calling setState
-				if (!e.canceled) setError(e);
+				if (e.canceled) setError(e); //if user cancelled the selection of the color then it will be triggered
 			}
 		};
 		openPicker();
@@ -53,10 +53,16 @@ const Popup = () => {
 				<span>EyeDropper API not supported in this browser</span>
 			)}
 			<div className='flex flex-row m-4 '>
-				<span
-					className='w-10 h-10 inline-block'
-					style={{ background: color }}></span>
-				<span className='text-lg'>{colorValue}</span>
+				{colorValue === null || undefined ? (
+					<span>Please select a Color</span>
+				) : (
+					<>
+						<span
+							className='w-10 h-10 inline-block'
+							style={{ background: color }}></span>
+						<span className='text-lg'>{colorValue}</span>
+					</>
+				)}
 			</div>
 			{!!error && <span>{error}</span>}
 		</div>
