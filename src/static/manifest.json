@@ -4,9 +4,9 @@
     "version": "1.0.0",
     "description": "This Project is about developing a chrome extension",
     "icons": {
-        "16": "icon.png",
-        "48": "icon.png",
-        "128": "icon.png"
+        "16": "icons-color-picker-16.png",
+        "48": "icons-color-picker-48.png",
+        "128": "icons-color-picker-128.png"
     },
     "action": {
         "default_title": "chrome-extension",
