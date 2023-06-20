@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import useEyeDropper from "use-eye-dropper";
 import "../assets/tailwind.css";
-import { BiCopy } from "react-icons/bi";
+import { TbClipboardCopy } from "react-icons/tb";
 
 const Popup = () => {
 	const { open, close, isSupported } = useEyeDropper();
@@ -48,12 +48,12 @@ const Popup = () => {
 	}
 	return (
 		<div className='h-screen flex flex-col justify-center items-center text-center'>
-			<p className='text-lg font-medium text-center'>
+			<p className='text-xl  font-medium text-center my-2'>
 				Welcome to my color picker
 			</p>
 			{isSupported() ? (
 				<button
-					className='text-lg bg-yellow-300 w-40 rounded-lg'
+					className='text-lg font-semibold text-white-500 w-40 rounded-md bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 '
 					onClick={pickColor}>
 					Pick Color
 				</button>
@@ -62,18 +62,24 @@ const Popup = () => {
 			)}
 			<div className='flex flex-row m-4 '>
 				{colorValue === null || undefined ? (
-					<span className='text-base '>Please select a Color.</span>
+					<span className='text-lg font-semibold '>
+						Please select a Color.
+					</span>
 				) : (
 					<>
 						<span
-							className='w-10 h-10 inline-block'
+							className='flex justify-center items-center w-10 h-10 inline-block border-2 border-solid border-black'
 							style={{ background: color }}></span>
-						<span className='text-lg mx-2'>{colorValue}</span>
+						<span className='text-lg mx-2 flex justify-center items-center'>
+							{colorValue}
+						</span>
 						<button
 							type='submit'
-							className=' bg-slate-200 w-5 h-5 mx-12 border-2 border-solid divide-black-400'
+							className='flex bg-slate-300 justify-center items-center rounded-sm bg-slate-200 w-10 h-10 mx-12 border-2 border-solid divide-black-400 hover:bg-white active:bg-white-700'
 							onClick={handleCopyColor}>
-							<BiCopy />
+							<span className='text-lg'>
+								<TbClipboardCopy />
+							</span>
 						</button>
 					</>
 				)}
