@@ -1,7 +1,7 @@
 {
-  "name": "chrome-extension",
+  "name": "color-picker",
   "version": "1.0.0",
-  "description": "This Project is about developing a Chrome Extension.",
+  "description": "With our Color Picker Extension, you can easily and accurately capture colors from any web page with just a click.",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
