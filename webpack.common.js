@@ -8,10 +8,10 @@ const { title } = require("process");
 module.exports = {
 	entry: {
 		popup: path.resolve("./src/popup/index.tsx"),
-		options: path.resolve("./src/options/options.tsx"),
+		// options: path.resolve("./src/options/options.tsx"), // no need to include options.tsx for production
 		background: path.resolve("./src/background/background.ts"),
-		contentScript: path.resolve("./src/contentScript/index.tsx"),
-		newTab: path.resolve("./src/tabs/index.tsx"),
+		// contentScript: path.resolve("./src/contentScript/index.tsx"), // no need to include contentScript for production
+		// newTab: path.resolve("./src/tabs/index.tsx"), // no need to include tabs now for production
 	},
 	module: {
 		rules: [
